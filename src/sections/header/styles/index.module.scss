@@ -1,0 +1,124 @@
+@use "../../../styles/index.scss" as *;
+
+.headerContainer {
+  @include flexRowConstructor(center, space-between, 1rem);
+  position: relative;
+  width: 100%;
+  height: 100px;
+
+  padding-inline: 80px;
+
+  border-bottom: 1px solid $STROKE;
+
+  @include xmd {
+    padding-inline: 40px;
+  }
+  @include s {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 20px 24px;
+    width: 100%;
+    min-height: 72px;
+    height: 72px;
+  }
+
+  .logo {
+    @include grotesk($gray-50, 700, 1.75);
+    line-height: 80%;
+    letter-spacing: -0.03em;
+    text-align: justify;
+  }
+
+  .navBar {
+    z-index: 20;
+    height: 100%;
+
+    @include s {
+      display: none;
+    }
+
+    .list {
+      @include flexRowConstructor(start, start, 2.5rem);
+      height: 100%;
+
+      text-decoration: none;
+      list-style: none;
+
+      @include md {
+        gap: 1rem;
+      }
+
+      & > li {
+        @include flexRowConstructor(center, center);
+        cursor: pointer;
+
+        height: 100%;
+        @include jakarta($gray-0, 500, 1.125);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        text-align: justify;
+
+        transition: all 150ms;
+
+        &:hover {
+          color: $accent-0;
+        }
+      }
+    }
+    .listMenu {
+      @include flexColumnConstructor(start, start, 1.125rem);
+      background: $gray-200;
+
+      padding: 24px;
+      width: 100%;
+      height: max-content;
+
+      border-top: 1px solid $STROKE;
+
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+  }
+  .navActive {
+    @include flexColumnConstructor(start, start);
+    position: fixed;
+    width: 95dvw;
+    max-width: 1440px;
+    top: 92px;
+    top: calc(50% + 77px);
+    right: 50%;
+    transform: translate(50%, -50%);
+    background: $BG;
+
+    @include s {
+      display: block;
+    }
+  }
+
+  .burgerMenu {
+    @include flexColumnConstructor(center, center);
+    display: none;
+
+    @include s {
+      display: flex;
+    }
+  }
+}
+
+.headerActive {
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  background: $gray-200;
+}
+
+.headerAlt {
+  border-radius: 32px;
+  background: $gray-200;
+
+  border-bottom: none;
+
+  &.headerActive {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}

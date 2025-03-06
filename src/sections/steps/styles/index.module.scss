@@ -1,0 +1,77 @@
+@use "../../../styles/index.scss" as *;
+
+.stepsContainer {
+  @include flexColumnConstructor(start, start, 3.75rem);
+  order: 5;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 32px;
+  padding: 80px;
+
+  background: $gray-200;
+
+  @include s {
+    gap: 2.5rem;
+    border-radius: 24px;
+    padding: 32px 24px;
+  }
+
+  .stepsInfo {
+    @include flexRowConstructor(start, space-between, 1rem);
+    width: 100%;
+
+    @include md {
+      flex-direction: column;
+    }
+
+    :nth-child(1) {
+      @include flexColumnConstructor(start, start);
+      width: 100%;
+
+      :nth-child(1) {
+        @include jakarta($accent-0, 600, 1.25);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+
+        @include s {
+          font-size: 0.75em;
+        }
+      }
+      :nth-child(2) {
+        @include jakarta($gray-0, 700, 3);
+        line-height: 150%;
+        letter-spacing: -0.03em;
+
+        @include s {
+          font-size: 1.5em;
+        }
+      }
+    }
+    :nth-child(2) {
+      @include jakarta($blue-50, 400, 1.25);
+      line-height: 150%;
+      letter-spacing: -0.02em;
+
+      width: 100%;
+      max-width: 594px;
+
+      @include s {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .stepsBlock {
+    @include flexRowConstructor(center, center);
+    row-gap: 2.5rem;
+    column-gap: 3.75rem;
+    flex-wrap: wrap;
+
+    @include s {
+      row-gap: 2rem;
+    }
+  }
+}

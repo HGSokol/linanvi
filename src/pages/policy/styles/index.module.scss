@@ -1,0 +1,43 @@
+@use "../../../styles/index.scss" as *;
+
+.policyWrapper {
+  @include flexColumnConstructor(center, center, 1.25rem);
+  position: relative;
+  width: 100%;
+
+  @include s {
+    gap: 0.625rem;
+  }
+
+  .policy {
+    border-radius: 32px;
+    padding: 80px;
+    width: 100%;
+    height: auto;
+
+    background: $gray-0;
+
+    .breadcrumbs {
+      @include flexRowConstructor(center, start, 0.3rem);
+
+      & > * {
+        text-decoration: none;
+      }
+
+      :nth-child(1) {
+        @include jakarta($blue-100, 400, 1.25);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+
+        cursor: pointer;
+      }
+      :nth-child(2) {
+        @include jakarta($blue-100, 600, 1.25);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+
+        cursor: default;
+      }
+    }
+  }
+}

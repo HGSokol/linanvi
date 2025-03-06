@@ -1,0 +1,53 @@
+@use "../../../styles/index.scss" as *;
+
+.carCardWrapper {
+  @include flexColumnConstructor(start, start, 1.5rem);
+  // max-width: 373px;
+  width: 373px;
+
+  @include xmd {
+    width: 255px;
+    gap: 1rem;
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+  }
+
+  .backgroundImage {
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 301px;
+
+    border-radius: 24px;
+
+    @include xmd {
+      height: 206px;
+    }
+  }
+
+  .info {
+    @include flexColumnConstructor(start, start, 0.25rem);
+
+    @include xmd {
+      gap: 0px;
+    }
+
+    :nth-child(1) {
+      @include jakarta($gray-250, 600, 1.375);
+      line-height: 140%;
+
+      @include xmd {
+        font-size: 1.125em;
+      }
+    }
+    :nth-child(2) {
+      @include jakarta($gray-200, 400, 1.25);
+      line-height: 140%;
+
+      @include xmd {
+        font-size: 1em;
+      }
+    }
+  }
+}

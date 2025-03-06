@@ -1,0 +1,43 @@
+@use "../../../styles/index.scss" as *;
+
+.stepsInfoCardWrapper {
+  @include flexColumnConstructor(start, start, 1.5rem);
+  position: relative;
+
+  width: 100%;
+
+  .backgroundImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 24px;
+    width: 100%;
+    height: 280px;
+  }
+
+  .infoBlock {
+    @include flexColumnConstructor(start, start, 0.75rem);
+
+    .titleInfo {
+      @include jakarta($gray-250, 600, 1.25);
+      line-height: 150%;
+      letter-spacing: -0.03em;
+    }
+
+    .descriptionInfo {
+      @include jakarta($blue-100, 400, 1);
+      line-height: 150%;
+      letter-spacing: -0.02em;
+    }
+
+    .listInfo {
+      @include flexColumnConstructor(start, start);
+
+      & > span {
+        @include jakarta($blue-100, 400, 1);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+      }
+    }
+  }
+}

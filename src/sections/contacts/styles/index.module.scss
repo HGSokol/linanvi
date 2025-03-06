@@ -1,0 +1,102 @@
+@use "../../../styles/index.scss" as *;
+
+.contactsContainer {
+  @include flexRowConstructor(start, space-between, 1rem);
+  order: 6;
+
+  width: 100%;
+  height: 660px;
+
+  border-radius: 32px;
+  padding: 80px;
+
+  background: $gray-50;
+
+  @include md {
+    height: auto;
+    flex-direction: column;
+  }
+  @include s {
+    gap: 2rem;
+    border-radius: 24px;
+    padding: 32px 24px;
+  }
+
+  .info {
+    @include flexColumnConstructor(start, start, 3.75rem);
+
+    max-width: 472px;
+    width: 100%;
+
+    @include s {
+      gap: 2rem;
+    }
+
+    .infoTitle {
+      @include flexColumnConstructor(start, start);
+
+      :nth-child(1) {
+        @include jakarta($accent-0, 600, 1.25);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+
+        margin-bottom: 8px;
+
+        @include s {
+          font-size: 0.75em;
+        }
+      }
+      :nth-child(2) {
+        @include jakarta($gray-250, 700, 3);
+        line-height: 150%;
+        letter-spacing: -0.03em;
+        text-transform: capitalize;
+
+        margin-bottom: 24px;
+
+        @include s {
+          font-size: 1.5em;
+          margin-bottom: 8px;
+        }
+      }
+      :nth-child(3) {
+        @include jakarta($blue-100, 400, 1.25);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+
+        @include s {
+          max-width: 90%;
+          font-size: 1em;
+        }
+      }
+    }
+
+    .infoBlock {
+      @include flexColumnConstructor(start, start, 1.25rem);
+
+      @include s {
+        gap: 0.75em;
+      }
+
+      .infoRow {
+        @include flexRowConstructor(center, start, 0.5rem);
+
+        :nth-child(1) {
+          width: 22px;
+          height: 22px;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        :nth-child(2) {
+          @include jakarta($gray-200, 600, 1.25);
+          line-height: 140%;
+
+          @include s {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}

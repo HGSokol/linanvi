@@ -1,0 +1,11 @@
+@use "../../../styles/index.scss" as *;
+
+.homeWrapper {
+  @include flexColumnConstructor(center, center, 1.25rem);
+  position: relative;
+  width: 100%;
+
+  @include s {
+    gap: 0.625rem;
+  }
+}

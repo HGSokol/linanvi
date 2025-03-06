@@ -1,0 +1,111 @@
+@use "../../../styles/index.scss" as *;
+
+.previewContainer {
+  @include flexColumnConstructor(start, start);
+
+  order: 1;
+  border-radius: 32px;
+  width: 100%;
+  height: 760px;
+
+  background-image: linear-gradient(rgba(4, 8, 21, 0.7), rgba(4, 8, 21, 0.7)),
+    url("../../../assets/images/background-preview.webp");
+  background-size: cover;
+  background-position: center;
+
+  @include s {
+    height: 610px;
+  }
+
+  .preview {
+    @include flexColumnConstructor(start, start, 1.875rem);
+    padding: 80px;
+    width: 100%;
+    max-width: 900px;
+
+    @include md {
+      max-width: 750px;
+      font-size: 1.25em;
+      padding: 40px;
+    }
+    @include xmd {
+      font-size: 1.25em;
+      padding: 32px 24px;
+    }
+    @include s {
+      font-size: 1em;
+    }
+
+    .titlePage {
+      @include jakarta($gray-0, 700, 4.5);
+      line-height: 125%;
+      letter-spacing: -0.03em;
+
+      max-width: 731px;
+      width: 100%;
+
+      @include md {
+        font-size: 3em;
+      }
+      @include s {
+        font-size: 2.25em;
+      }
+    }
+
+    .descriptionPage {
+      @include jakarta($blue-50, 400, 1.375);
+      line-height: 150%;
+      letter-spacing: -0.02em;
+
+      max-width: 620px;
+      width: 100%;
+
+      margin-bottom: 40px;
+
+      @include xmd {
+        font-size: 1.25em;
+        margin-bottom: 20px;
+      }
+      @include s {
+        font-size: 1em;
+      }
+    }
+
+    .buttonsWrapper {
+      @include flexRowConstructor(start, start, 1rem);
+
+      & > :nth-child(1),
+      & > :nth-child(2) {
+        border-radius: 16px;
+        padding: 13px 40px;
+        width: max-content;
+        height: 52px;
+
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        text-align: center;
+
+        cursor: pointer;
+      }
+
+      & > :nth-child(1) {
+        background: $accent-0;
+        @include jakarta($gray-0, 600, 1);
+      }
+      & > :nth-child(2) {
+        background: $gray-200;
+        @include jakarta($blue-50, 600, 1);
+      }
+
+      @include s {
+        flex-direction: column;
+        width: 100%;
+
+        & > :nth-child(1),
+        & > :nth-child(2) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

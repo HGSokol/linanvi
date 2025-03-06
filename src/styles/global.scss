@@ -1,0 +1,26 @@
+@use "index.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  -webkit-tap-highlight-color: transparent;
+
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  height: 100%;
+  font-size: 16px;
+  background-color: $gray-250;
+}

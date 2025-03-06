@@ -1,0 +1,74 @@
+@use "../../../styles/index.scss" as *;
+
+.aboutContainer {
+  @include flexColumnConstructor(start, start, 3.75rem);
+  order: 2;
+
+  width: 100%;
+  height: 802px;
+
+  border-radius: 32px;
+  padding: 80px;
+
+  background: $gray-0;
+
+  @include md {
+    order: 2;
+    padding: 32px 24px;
+    height: auto;
+  }
+
+  .titlBlock {
+    @include flexRowConstructor(start, space-between);
+    width: 100%;
+
+    @include md {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .title {
+      @include flexColumnConstructor(start, start);
+
+      :nth-child(1) {
+        @include jakarta($accent-0, 600, 1.25);
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+      :nth-child(2) {
+        @include jakarta($gray-250, 700, 3);
+        line-height: 150%;
+        letter-spacing: -0.03em;
+      }
+    }
+
+    .description {
+      align-self: end;
+      width: 594px;
+
+      @include jakarta($blue-100, 400, 1.25);
+      line-height: 150%;
+      letter-spacing: -0.02em;
+
+      @include md {
+        width: 100%;
+        align-self: flex-start;
+      }
+    }
+  }
+
+  .cardBlock {
+    @include flexRowConstructor(start, start, 2.5rem);
+    width: 100%;
+
+    @include md {
+      justify-content: center;
+      flex-wrap: wrap;
+      & > div {
+        max-width: 373px;
+        width: 100%;
+      }
+    }
+  }
+}
