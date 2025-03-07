@@ -15,12 +15,13 @@
   background: $gray-0;
 
   @include md {
-    padding: 32px 24px;
     order: 4;
     height: auto;
   }
   @include s {
     gap: 2rem;
+    border-radius: 24px;
+    padding: 32px 24px;
   }
 
   .headerWrapper {

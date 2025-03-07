@@ -1,5 +1,9 @@
 import AboutCard from "../../components/about-card";
-import img1 from "../../assets/images/car-1.webp";
+
+import about1 from "../../assets/images/about1.webp";
+import about2 from "../../assets/images/about2.webp";
+import about3 from "../../assets/images/about3.webp";
+
 import styles from "./styles/index.module.scss";
 
 export interface IAboutCard {
@@ -14,7 +18,7 @@ const aboutData: IAboutCard[] = [
     title: "Who we are?",
     description:
       "We work with official dealers and trusted suppliers in Europe to offer our clients the highest quality cars on the best terms.",
-    img: img1,
+    img: about1,
   },
   {
     title: "What we offer",
@@ -23,7 +27,7 @@ const aboutData: IAboutCard[] = [
       "Purchase of cars from Europe with a transparent history",
       "Logistics and delivery across the EU",
     ],
-    img: img1,
+    img: about2,
   },
   {
     title: "What else?",
@@ -31,7 +35,7 @@ const aboutData: IAboutCard[] = [
       "Document processing and customs support",
       "Financing and leasing consultations",
     ],
-    img: img1,
+    img: about3,
   },
 ];
 

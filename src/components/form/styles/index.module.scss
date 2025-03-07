@@ -79,8 +79,13 @@
 
       background: $gray-0;
 
+      @include jakarta($gray-250, 500, 1.125);
+      line-height: 120%;
+
       @include s {
         padding: 20px;
+
+        font-size: 1em;
       }
 
       &:focus {

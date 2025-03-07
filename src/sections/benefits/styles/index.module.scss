@@ -16,8 +16,9 @@
     flex-direction: column;
     gap: 3rem;
   }
-
-  @include md {
+  @include s {
+    gap: 2rem;
+    border-radius: 24px;
     padding: 32px 24px;
   }
 
@@ -27,6 +28,11 @@
 
     .infoTitleBlock {
       @include flexColumnConstructor(start, start, 1.5rem);
+
+      @include s {
+        gap: 0.75em;
+      }
+
       .infoTitle {
         @include flexColumnConstructor(start, start);
 
@@ -35,17 +41,29 @@
           line-height: 150%;
           letter-spacing: -0.02em;
           text-transform: uppercase;
+
+          @include s {
+            font-size: 0.75em;
+          }
         }
         :nth-child(2) {
           @include jakarta($gray-0, 700, 3);
           line-height: 150%;
           letter-spacing: -0.03em;
+
+          @include s {
+            font-size: 1.5em;
+          }
         }
       }
       .infoDescription {
         @include jakarta($gray-0, 400, 1.25);
         line-height: 150%;
         letter-spacing: -0.02em;
+
+        @include s {
+          font-size: 1em;
+        }
       }
     }
 
@@ -79,6 +97,7 @@
     flex-wrap: wrap;
 
     @include s {
+      row-gap: 2rem;
       justify-content: start;
     }
 
@@ -86,6 +105,10 @@
       @include flexColumnConstructor(start, start, 2rem);
       width: 274px;
       height: 100%;
+
+      @include s {
+        gap: 1rem;
+      }
 
       & > :nth-child(1) {
         min-width: 44px;
@@ -98,10 +121,18 @@
         :nth-child(1) {
           @include jakarta($gray-0, 600, 1.25);
           line-height: 120%;
+
+          @include s {
+            font-size: 1em;
+          }
         }
         :nth-child(2) {
           @include manrope($blue-50, 400, 1);
           line-height: 140%;
+
+          @include s {
+            font-size: 0.75em;
+          }
         }
       }
     }

@@ -16,9 +16,9 @@ const Slider: FC<IStepsInfoCard> = ({ carData, step }) => {
         className={styles.sliderWrapper}
         style={{ translate: `-${step * (375 + 40)}px` }}
       >
-        {carData.map((e) => (
+        {carData.map((e, i) => (
           <CarSliderCard
-            key={`${e.model}-${e.price}`}
+            key={`${e.model}-${e.price}-${i}`}
             img={e.img}
             model={e.model}
             price={e.price}
