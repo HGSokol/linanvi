@@ -38,19 +38,19 @@ const Header: FC<IHeader> = ({ alt }) => {
         }
       >
         <ul className={`${styles.list} ${activeMenu && styles.listMenu}`}>
-          <li onClick={() => setActiveMenu((prev) => !prev)}>
+          <li onClick={() => setActiveMenu(false)}>
             <a href="#Header">Company</a>
           </li>
-          <li onClick={() => setActiveMenu((prev) => !prev)}>
+          <li onClick={() => setActiveMenu(false)}>
             <a href="#Benefits">Benefits</a>
           </li>
-          <li onClick={() => setActiveMenu((prev) => !prev)}>
+          <li onClick={() => setActiveMenu(false)}>
             <a href="#Products">Products</a>
           </li>
-          <li onClick={() => setActiveMenu((prev) => !prev)}>
+          <li onClick={() => setActiveMenu(false)}>
             <a href="#Steps">How it Works</a>
           </li>
-          <li onClick={() => setActiveMenu((prev) => !prev)}>
+          <li onClick={() => setActiveMenu(false)}>
             <a href="#Contacts">Contact</a>
           </li>
         </ul>
