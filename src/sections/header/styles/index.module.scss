@@ -114,6 +114,11 @@
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   background: $gray-200;
+
+  @include s {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
 }
 
 .headerAlt {
