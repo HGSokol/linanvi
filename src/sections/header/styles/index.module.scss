@@ -60,7 +60,12 @@
 
         transition: all 150ms;
 
-        &:hover {
+        & > a {
+          text-decoration: none;
+          @include jakarta($gray-0, 500, 1.125);
+        }
+
+        & :hover {
           color: $accent-0;
         }
       }
@@ -85,7 +90,7 @@
     width: 95dvw;
     max-width: 1440px;
     top: 92px;
-    top: calc(50% + 77px);
+    top: calc(50% + 72px);
     right: 50%;
     transform: translate(50%, -50%);
     background: $BG;

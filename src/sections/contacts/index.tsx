@@ -8,7 +8,7 @@ import styles from "./styles/index.module.scss";
 
 const Contacts = () => {
   return (
-    <div className={styles.contactsContainer}>
+    <div id="Contacts" className={styles.contactsContainer}>
       <div className={styles.info}>
         <div className={styles.infoTitle}>
           <span>Our contacts</span>

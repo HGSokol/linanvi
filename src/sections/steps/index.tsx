@@ -49,7 +49,7 @@ const stepData = [
 
 const Steps = () => {
   return (
-    <div className={styles.stepsContainer}>
+    <div id="Steps" className={styles.stepsContainer}>
       <div className={styles.stepsInfo}>
         <div>
           <span>How it Works</span>

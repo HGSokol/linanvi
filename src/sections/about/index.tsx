@@ -41,7 +41,7 @@ const aboutData: IAboutCard[] = [
 
 const About = () => {
   return (
-    <div className={styles.aboutContainer}>
+    <div id="About" className={styles.aboutContainer}>
       <div className={styles.titlBlock}>
         <div className={styles.title}>
           <span>Why use LiNANVI</span>

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Slider from "../../components/slider";
+
 import ArrowIcon from "../../assets/icons/arrow-icon";
 
 import phoneImg from "../../assets/images/phone.png";
 import mailImg from "../../assets/images/mail.png";
-
 import car1 from "../../assets/images/car1.webp";
 import car2 from "../../assets/images/car2.webp";
 import car3 from "../../assets/images/car3.webp";
@@ -164,7 +164,7 @@ const Products = () => {
   };
 
   return (
-    <div className={styles.productsContainer}>
+    <div id="Products" className={styles.productsContainer}>
       <div className={styles.headerWrapper}>
         <div className={styles.titleWrapper}>
           <span>Our products</span>

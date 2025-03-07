@@ -64,7 +64,7 @@
           max-width: max-content;
         }
 
-        :nth-child(1) {
+        & > :nth-child(1) {
           @include jakarta($blue-50, 500, 0.75);
           line-height: 140%;
           letter-spacing: 0.04em;

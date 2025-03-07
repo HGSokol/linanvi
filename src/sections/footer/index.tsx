@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom";
 import styles from "./styles/index.module.scss";
 
 const Footer = () => {
   return (
-    <div className={styles.footerContainer}>
+    <div id="Footer" className={styles.footerContainer}>
       <div className={styles.info}>
         <div className={styles.logo}>LINANVI</div>
         <div className={styles.infoBlockContainer}>
           <div className={styles.infoBlock}>
             <div>Info</div>
             <div>
-              <a href="#">Company</a>
-              <a href="#">Benefits</a>
-              <a href="#">Products</a>
-              <a href="#">How it Works</a>
-              <a href="#">Contact</a>
+              <a href="#Header">Company</a>
+              <a href="#Benefits">Benefits</a>
+              <a href="#Products">Products</a>
+              <a href="#Steps">How it Works</a>
+              <a href="#Contacts">Contact</a>
             </div>
           </div>
           <div className={styles.infoBlock}>
@@ -40,7 +39,7 @@ const Footer = () => {
       </div>
       <div className={styles.links}>
         <div>© 2025</div>
-        <Link to="/policy">Privacy Policy</Link>
+        <div>Privacy Policy</div>
       </div>
     </div>
   );

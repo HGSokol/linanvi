@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import FormLayout from "../../components/form-layout";
+
 import StarIcon from "../../assets/icons/star-icon";
 import FileIcon from "../../assets/icons/file-icon";
 import PackageIcon from "../../assets/icons/package-icon";
@@ -6,8 +9,22 @@ import MapIcon from "../../assets/icons/map-icon";
 import styles from "./styles/index.module.scss";
 
 const Benefits = () => {
+  const [activePopup, setActivePopup] = useState(false);
+
+  useEffect(() => {
+    if (activePopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activePopup]);
+
   return (
-    <div className={styles.benefitsContainer}>
+    <div id="Benefits" className={styles.benefitsContainer}>
       <div className={styles.infoContainer}>
         <div className={styles.infoTitleBlock}>
           <div className={styles.infoTitle}>
@@ -19,7 +36,12 @@ const Benefits = () => {
             luxury automobiles!
           </span>
         </div>
-        <div className={styles.infoButton}>Contact us</div>
+        <div
+          className={styles.infoButton}
+          onClick={() => setActivePopup((prev) => !prev)}
+        >
+          Contact us
+        </div>
       </div>
       <div className={styles.infoSentense}>
         <div className={styles.infoBlock}>
@@ -51,7 +73,15 @@ const Benefits = () => {
           </div>
         </div>
       </div>
-      <div className={styles.infoButton}>Contact us</div>
+      <div
+        className={styles.infoButton}
+        onClick={() => setActivePopup((prev) => !prev)}
+      >
+        Contact us
+      </div>
+      {activePopup && (
+        <FormLayout closePopup={() => setActivePopup((prev) => !prev)} />
+      )}
     </div>
   );
 };

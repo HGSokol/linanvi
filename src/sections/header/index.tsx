@@ -1,19 +1,18 @@
 import { FC, useEffect, useState } from "react";
 
-import styles from "./styles/index.module.scss";
 import BurgerMenuIcon from "../../assets/icons/burger-menu-icon";
 import CrossMenuIcon from "../../assets/icons/cross-meni-icon";
-import FormLayout from "../../components/form-layout";
+
+import styles from "./styles/index.module.scss";
 
 interface IHeader {
   alt?: boolean;
 }
 const Header: FC<IHeader> = ({ alt }) => {
   const [activeMenu, setActiveMenu] = useState(false);
-  const [activePopup, setActivePopup] = useState(false);
 
   useEffect(() => {
-    if (activeMenu || activePopup) {
+    if (activeMenu) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -22,10 +21,11 @@ const Header: FC<IHeader> = ({ alt }) => {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [activeMenu, activePopup]);
+  }, [activeMenu]);
 
   return (
     <div
+      id="Header"
       className={`${styles.headerContainer} ${
         activeMenu && styles.headerActive
       } ${alt && styles.headerAlt}`}
@@ -38,20 +38,20 @@ const Header: FC<IHeader> = ({ alt }) => {
         }
       >
         <ul className={`${styles.list} ${activeMenu && styles.listMenu}`}>
-          <li>
-            <a>Company</a>
+          <li onClick={() => setActiveMenu((prev) => !prev)}>
+            <a href="#Header">Company</a>
           </li>
-          <li>
-            <a>Benefits</a>
+          <li onClick={() => setActiveMenu((prev) => !prev)}>
+            <a href="#Benefits">Benefits</a>
           </li>
-          <li>
-            <a>Products</a>
+          <li onClick={() => setActiveMenu((prev) => !prev)}>
+            <a href="#Products">Products</a>
           </li>
-          <li>
-            <a>How it Works</a>
+          <li onClick={() => setActiveMenu((prev) => !prev)}>
+            <a href="#Steps">How it Works</a>
           </li>
-          <li onClick={() => setActivePopup((prev) => !prev)}>
-            <a>Contact</a>
+          <li onClick={() => setActiveMenu((prev) => !prev)}>
+            <a href="#Contacts">Contact</a>
           </li>
         </ul>
       </div>
@@ -61,9 +61,6 @@ const Header: FC<IHeader> = ({ alt }) => {
       >
         {activeMenu ? <CrossMenuIcon /> : <BurgerMenuIcon />}
       </div>
-      {activePopup && (
-        <FormLayout closePopup={() => setActivePopup((prev) => !prev)} />
-      )}
     </div>
   );
 };
